@@ -1,17 +1,22 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, Pressable } from "react-native";
+import { router } from "expo-router";
+import { styles } from "./styles";
 
-export default function Index() {
+export default function LandingPage() {
   return (
     <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <Text>My Little Task 📝</Text>
+
+      <Text>One thing at a time ♡</Text>
+
+      <Text>
+        Keep your day organized,{"\n"}
+        one little task at a time.
+      </Text>
+
+      <Pressable onPress={() => router.push("/todo")}>
+        <Text>Get Started</Text>
+      </Pressable>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
